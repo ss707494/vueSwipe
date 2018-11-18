@@ -15,7 +15,8 @@
             v-for="index in itemLength"
             class="m-swipe-indicator"
             :key="`indicator${index}`"
-            :class="index === activeNum + 1 ? 'm-swipe-indicator__active' : ''"
+            :class="index -1 === activeNum ? 'm-swipe-indicator__active' : ''"
+            @click="move(index - 1)"
         />
       </div>
     </slot>
