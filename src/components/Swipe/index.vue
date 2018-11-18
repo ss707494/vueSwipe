@@ -13,8 +13,8 @@
       <div class="m-swipe-indicators">
         <i
             v-for="index in itemLength"
-            :key="`indicator${index}`"
             class="m-swipe-indicator"
+            :key="`indicator${index}`"
             :class="index === activeNum + 1 ? 'm-swipe-indicator__active' : ''"
         />
       </div>
