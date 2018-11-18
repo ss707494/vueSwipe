@@ -1,28 +1,66 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+      <Swipe ref="swipe" class="swipe">
+        <div
+            class="item"
+        >
+          <img src="./assets/images.jpg"
+               alt="">
+        </div>
+        <div
+            class="item"
+        >
+          <img src="./assets/images2.jpg"
+               alt="">
+        </div>
+        <div
+            class="item"
+        >
+          <img src="./assets/images3.jpg"
+               alt="">
+        </div>
+      </Swipe>
+    <div>
+      <button @click="pre" >pre</button>
+      <button @click="next" >next</button>
+      <!--{{this.activeNum}}-->
+    </div>
   </div>
 </template>
+<style lang="scss">
+  .swipe {
+    height: 640px;
+  }
+  .item {
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+</style>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Swipe from './components/Swipe'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    Swipe,
+  },
+  methods: {
+    pre() {
+      this.$refs.swipe.pre()
+    },
+    next() {
+      this.$refs.swipe.next()
+    }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+    * {
+        padding: 0;
+        margin: 0;
+    }
 </style>

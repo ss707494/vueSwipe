@@ -1,0 +1,41 @@
+$swipe-indicator: 6px;
+.m-swipe {
+  position: relative;
+  &-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  &-wrap {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    > * {
+      flex: 0 0 100%;
+    }
+  }
+  &-item {
+  }
+  &-indicators {
+    display: flex;
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    transform: translateX(-50%);
+  }
+  &-indicator {
+    border-radius: 100%;
+    background-color: gray;
+    width: $swipe-indicator;
+    height: $swipe-indicator;
+
+    &:not(:last-child) {
+      margin-right: $swipe-indicator;
+    }
+
+    &__active {
+      background-color: orange;
+    }
+  }
+}
